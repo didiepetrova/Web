@@ -1,0 +1,123 @@
+{
+  "__type": "ArtOfTest.WebAii.Design.ProjectModel.Test",
+  "__value": {
+    "DomStatesCounter": {},
+    "WebKitExecutionDelay": 0,
+    "ReuseAppWindow": 0,
+    "ProfilerResultsDirectory": "C:\\Users\\dpetrova\\AppData\\Local\\Temp\\",
+    "ProfilerServerName": null,
+    "ProfilerBenchmarkResultsFilePath": null,
+    "ProfilerBenchmarkResultsId": "00000000-0000-0000-0000-000000000000",
+    "ProfilerConfigurationId": "00000000-0000-0000-0000-000000000000",
+    "ProfilerConfigurations": {},
+    "CurrentReferences": [
+      "System",
+      "System.Core",
+      "ArtOfTest.WebAii, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c",
+      "ArtOfTest.WebAii.Design, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d",
+      "Telerik.WebAii.Controls.Html, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=528163f3e645de45",
+      "Telerik.WebAii.Controls.Xaml, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=528163f3e645de45",
+      "Telerik.WebAii.Controls.Xaml.Wpf, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=528163f3e645de45",
+      "Telerik.TestingFramework.Controls.KendoUI, Version=2016.2.720.0, Culture=neutral, PublicKeyToken=528163f3e645de45",
+      "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+    ],
+    "Steps": {
+      "__type": "ArtOfTest.Common.Design.ProjectModel.AutomationStepList",
+      "__value": [
+        {
+          "__type": "ArtOfTest.WebAii.Design.ProjectModel.AutomationStep",
+          "__value": {
+            "Runtime ID": "c0bf340c-3217-4355-a175-29c3e5ad6cbd",
+            "Description": "Navigate then verify text in popup dialog",
+            "CustomDescription": null,
+            "Step": {
+              "__type": "ArtOfTest.WebAii.Design.IntrinsicTranslators.Descriptors.CodedStepDescriptor",
+              "__value": {
+                "Code": "    ActiveBrowser.NavigateTo(\"http://www.w3schools.com/JS/tryit.asp?filename=tryjs_alert\");\r\n\r\n    \r\n\r\n    // Click the button to fire the Alert Dialog inside the browser\r\n    FrameInfo myFrame = new FrameInfo(\"iframeResult\", \"\", \"\", 0);\r\n    Browser frame = ActiveBrowser.Frames[myFrame];\r\n    HtmlButton tryItButton = frame.Find.ByTagIndex<HtmlButton>(\"button\", 0);\r\n    \r\n    //Console.WriteLine(tryItButton);\r\n    \r\n    Assert.IsNotNull(tryItButton);\r\n    \r\n    \r\n    // Initialize custom 'Alert' dialog handler\r\n    AlertDialog alertDialog = AlertDialog.CreateAlertDialog(ActiveBrowser, DialogButton.OK);\r\n    Manager.DialogMonitor.Start();\r\n    alertDialog.HandlerDelegate = MyCustomAlertHandler;\r\n    Manager.DialogMonitor.AddDialog(alertDialog);\r\n    tryItButton.Click();\r\n    \r\n    // Wait Until Dialog is Handled.\r\n    alertDialog.WaitUntilHandled(20000);\r\n\r\n    // Validate the text that was captured by the custom dialog handler\r\n    Assert.AreEqual<string>(\"I am an alert box!\", dialogText);\r\n    ",
+                "RequiresSilverlight": false,
+                "WaitOnElements": true,
+                "WaitOnElementsTimeout": 30000,
+                "UseStepWaitOnElementsTimout": false,
+                "Pause": 0,
+                "RunsAgainstVersion": "",
+                "Constraints": {
+                  "__type": "ArtOfTest.Common.Design.Extensibility.Descriptors.DescriptorConstraints",
+                  "__value": {
+                    "ConstraintValues": {}
+                  }
+                },
+                "Elements": {},
+                "StepType": 4,
+                "LogMessageOnFailure": "",
+                "EditorType": "",
+                "DataBindingExpressions": {}
+              }
+            },
+            "Enabled": true,
+            "Order": 1,
+            "Id": "VerifyDialogText_CodedStep",
+            "StepState": 1,
+            "ContinueOnFailure": true,
+            "StepImageKey": "Dialogrk3aqtqs.gfc",
+            "QcId": 0,
+            "QcVersionStamp": 0,
+            "Version": 200
+          }
+        }
+      ]
+    },
+    "IndependentDescriptors": [],
+    "HtmlDescription": "",
+    "SilverlightEnabled": false,
+    "IsSilverlightApp": false,
+    "SilverlightAppWebUrl": "",
+    "SilverlightAppLocalDirectory": "",
+    "SilverlightAppRecordLocal": false,
+    "SilverlightAppOriginUri": null,
+    "WpfAppPath": null,
+    "UseDefaultWpfAppPath": false,
+    "TestAssembly": "Web.dll",
+    "TestAssemblyPath": "bin",
+    "TestClass": "Web.Dialog",
+    "IsManual": false,
+    "ResourceFilePath": "Dialog not.resx",
+    "HasCodeBehind": true,
+    "DataInfo": {
+      "__type": "ArtOfTest.Common.Design.Data.DataInfo",
+      "__value": {
+        "ConnectionString": "",
+        "DefaultToGrid": true,
+        "DataRange": "",
+        "LoadRecordsCount": null,
+        "DataTableName": "",
+        "DataProvider": "",
+        "DataEnabled": true,
+        "HasBuiltinGrid": false,
+        "DataType": 4,
+        "BuiltInData": null,
+        "BuiltInDocumentKey": null,
+        "TSQL": ""
+      }
+    },
+    "VSProperties": {},
+    "DeploymentItems": [],
+    "IsTestFragment": false,
+    "StopTestListOnFailure": false,
+    "InheritParentDataSource": false,
+    "BrowserType": 0,
+    "QcId": 0,
+    "QcFilePath": null,
+    "QcTestVersionStamp": 0,
+    "TestLinks": [],
+    "Description": "",
+    "Name": "Dialog not",
+    "Owner": "",
+    "Path": "Dialog not.tstest",
+    "Priority": 0,
+    "TestType": 0,
+    "UniqueId": "5891b280-a213-47a2-9e7e-f442e9f304e4",
+    "Id": "5891b280-a213-47a2-9e7e-f442e9f304e4",
+    "ProjectId": "dbda367f-4f9c-44fa-80bd-fb9d84f0353c",
+    "Version": 200
+  }
+}
